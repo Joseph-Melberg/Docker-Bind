@@ -44,7 +44,7 @@ jobs:
         name: Run SSH command
         uses: garygrossgarten/github-action-ssh@v0.5.0
         with:
-          command: docker pull docker.centurionx.net/plane-bind; docker stop plane-bind; docker rm plane-bind; docker run -e PORTA=30001 -e PORTB=30002 --log-opt tag=bind --network host --name=plane-bind --restart=unless-stopped -d docker.centurionx.net/bind
+          command: docker pull docker.centurionx.net/bind; docker stop plane-bind; docker rm plane-bind; docker run -e PORTA=30001 -e PORTB=30002 --log-opt tag=bind --network host --name=plane-bind --restart=unless-stopped -d docker.centurionx.net/bind
           host: ${{ secrets.HOST }}
           username: ${{secrets.CENTURION_USERNAME}}
           password: ${{secrets.CENTURION_PASSWORD}}
